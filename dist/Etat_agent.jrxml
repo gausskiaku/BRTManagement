@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Etat_agent" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="79d0422f-f867-49f4-8b7f-43880588cb70">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM t_agent]]>
+	</queryString>
+	<field name="id_agent" class="java.lang.Integer"/>
+	<field name="matricule_agent" class="java.lang.String"/>
+	<field name="nom_agent" class="java.lang.String"/>
+	<field name="post_nom_agent" class="java.lang.String"/>
+	<field name="lieu_de_naissance_agent" class="java.lang.String"/>
+	<field name="nom_pere" class="java.lang.String"/>
+	<field name="nom_mere" class="java.lang.String"/>
+	<field name="etat_civil_agent" class="java.lang.String"/>
+	<field name="nom_conj" class="java.lang.String"/>
+	<field name="nombre_enfant" class="java.lang.Integer"/>
+	<field name="nationalite_agent" class="java.lang.String"/>
+	<field name="province_agent" class="java.lang.String"/>
+	<field name="district_agent" class="java.lang.String"/>
+	<field name="territoire_agent" class="java.lang.String"/>
+	<field name="secteur_agent" class="java.lang.String"/>
+	<field name="num_tel_agent" class="java.lang.String"/>
+	<field name="email_agent" class="java.lang.String"/>
+	<field name="commune_agent" class="java.lang.String"/>
+	<field name="quartier_agent" class="java.lang.String"/>
+	<field name="avenue_agent" class="java.lang.String"/>
+	<field name="sexe" class="java.lang.String"/>
+	<field name="num" class="java.lang.String"/>
+	<field name="tel_urgent" class="java.lang.String"/>
+	<field name="degre_parental" class="java.lang.String"/>
+	<field name="commune_urgent" class="java.lang.String"/>
+	<field name="quartier_urgent" class="java.lang.String"/>
+	<field name="avenue_urgent" class="java.lang.String"/>
+	<field name="num_urgent" class="java.lang.String"/>
+	<field name="id_parrain" class="java.lang.Integer"/>
+	<field name="prenom_agent" class="java.lang.String"/>
+	<field name="photo_agent" class="java.lang.Object"/>
+	<field name="date_de_naissance_agent" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="164" height="126" uuid="323ccfd5-f5c7-4d76-a00e-85ba3bca127b"/>
+				<imageExpression><![CDATA["coffee.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="270" y="0" width="263" height="62" uuid="550a7bc6-61ac-4009-ae86-6c10a8e96fff"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Brt Africa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="303" y="62" width="196" height="22" uuid="7fb4a81f-b685-4668-884a-2c2d466884f3"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[La liste de tous les agents]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="94" width="383" height="42" uuid="358f79c8-3ed0-4f10-b7b4-54e2a6e25781"/>
+				<textElement textAlignment="Center">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Brt Africa television et radio]]></text>
+			</staticText>
+			<image>
+				<reportElement x="633" y="-73" width="219" height="209" uuid="ae670ddd-04cf-4cef-b09b-29cf0525a516"/>
+				<imageExpression><![CDATA["coffee_stain.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="f617d10d-822f-48a2-8a66-d5fbe7e2e210"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="50" height="15" forecolor="#736343" uuid="38984a24-15b9-4d48-b951-ea91ec5bb2e4"/>
+				<text><![CDATA[Numero]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="50" y="0" width="64" height="15" forecolor="#736343" uuid="93e95510-cac6-4ad5-94c7-8fcc7fbd4bfe"/>
+				<text><![CDATA[Matricule]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="114" y="1" width="71" height="15" forecolor="#736343" uuid="ae4bb67b-0d4d-4349-9525-fd53beedb581"/>
+				<text><![CDATA[Nom l'agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="225" y="1" width="25" height="15" forecolor="#736343" uuid="e6bc8360-da5b-42ed-a2f6-b1b117607d0b"/>
+				<text><![CDATA[post_nom_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="270" y="1" width="25" height="15" forecolor="#736343" uuid="e4103b61-8b03-4ab9-a13c-54ce23060cc6"/>
+				<text><![CDATA[lieu_de_naissance_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="303" y="1" width="25" height="15" forecolor="#736343" uuid="cdbe1913-a188-4a06-bc54-b70629bbc96b"/>
+				<text><![CDATA[etat_civil_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="488" y="0" width="25" height="15" forecolor="#736343" uuid="c8435bdf-ebb2-4093-b3d1-a3880e7dd744"/>
+				<text><![CDATA[nom_conj]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="334" y="1" width="25" height="15" forecolor="#736343" uuid="28dea5e9-b4c4-43a1-8d6f-bdb7867a8c1b"/>
+				<text><![CDATA[nationalite_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="375" y="0" width="25" height="15" forecolor="#736343" uuid="ced6be42-b138-40b7-bc46-af959ac222c7"/>
+				<text><![CDATA[num_tel_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="400" y="0" width="25" height="15" forecolor="#736343" uuid="10146dc6-d324-49d8-a0b6-b5a52f13dc00"/>
+				<text><![CDATA[email_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="425" y="0" width="25" height="15" forecolor="#736343" uuid="e31675e9-5ca5-4919-a78c-64b324b0d7f5"/>
+				<text><![CDATA[commune_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="450" y="0" width="25" height="15" forecolor="#736343" uuid="ef29a110-0f4f-464c-9f85-06d741f3f344"/>
+				<text><![CDATA[quartier_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="475" y="0" width="25" height="15" forecolor="#736343" uuid="58150648-df70-4e1a-a254-cffa097899bc"/>
+				<text><![CDATA[avenue_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="500" y="0" width="25" height="15" forecolor="#736343" uuid="7889c613-bda0-417e-b848-3181072765fb"/>
+				<text><![CDATA[sexe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="525" y="0" width="25" height="15" forecolor="#736343" uuid="a8257343-88d4-431b-bf6c-77d219d88071"/>
+				<text><![CDATA[num]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="725" y="0" width="25" height="15" forecolor="#736343" uuid="f36140c1-5096-4708-b789-3e9796e457b3"/>
+				<text><![CDATA[prenom_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="775" y="0" width="25" height="15" forecolor="#736343" uuid="a2eb7ea0-1c1d-4695-86a0-0ea36bb83176"/>
+				<text><![CDATA[date_de_naissance_agent]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="682" y="15" width="25" height="15" uuid="d9751bc6-6a1b-4139-97b8-5669d4321c60"/>
+				<textFieldExpression><![CDATA[$F{num}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="75f601dd-24d3-4586-88dc-49decbab3406"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="25" height="15" uuid="f7821b9d-a021-4d13-b84a-9f29ace7a304"/>
+					<textFieldExpression><![CDATA[$F{id_agent}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="50" y="0" width="25" height="15" uuid="57febf82-709a-44f8-8eee-a24d8bdd5d7e"/>
+					<textFieldExpression><![CDATA[$F{matricule_agent}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="139" y="0" width="25" height="15" uuid="63de4b75-051e-4ce6-b422-2d96736faf1d"/>
+					<textFieldExpression><![CDATA[$F{nom_agent}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="172" y="3" width="25" height="15" uuid="7e23c693-adfa-477f-81eb-a0e5e2f07fa9"/>
+					<textFieldExpression><![CDATA[$F{post_nom_agent}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="200" y="4" width="25" height="15" uuid="10bc1a39-adb5-42e5-b58e-069e92a81abd"/>
+					<textFieldExpression><![CDATA[$F{lieu_de_naissance_agent}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="225" y="3" width="25" height="15" uuid="9b0f512d-d449-474d-a300-d71acc283421"/>
+					<textFieldExpression><![CDATA[$F{etat_civil_agent}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="270" y="3" width="25" height="15" uuid="06ca0784-996d-4cda-b3fe-c2260667cd97"/>
+					<textFieldExpression><![CDATA[$F{nom_conj}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="303" y="4" width="25" height="15" uuid="f30abf76-998c-4b49-aee8-645cd1542265"/>
+					<textFieldExpression><![CDATA[$F{nombre_enfant}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="350" y="3" width="25" height="15" uuid="ee6a7033-a5f0-4ed6-b9a7-e13a8c2c35fc"/>
+					<textFieldExpression><![CDATA[$F{nationalite_agent}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="400" y="0" width="25" height="15" uuid="97ef18ad-7fde-46a1-9e5e-bda20eadbebb"/>
+					<textFieldExpression><![CDATA[$F{num_tel_agent}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="450" y="0" width="25" height="15" uuid="8a06f063-96ce-4023-9e8c-ddd54aae1da4"/>
+					<textFieldExpression><![CDATA[$F{email_agent}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="499" y="4" width="25" height="15" uuid="f47cc2ce-0562-4741-882c-6e0ae2247fbb"/>
+					<textFieldExpression><![CDATA[$F{commune_agent}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="555" y="3" width="25" height="15" uuid="a4168bfb-add3-4898-afe0-5079a6e98f3b"/>
+					<textFieldExpression><![CDATA[$F{quartier_agent}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="591" y="3" width="25" height="15" uuid="f3f4e39b-0a33-47f6-ab40-67e44accd7ee"/>
+					<textFieldExpression><![CDATA[$F{avenue_agent}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="633" y="0" width="25" height="15" uuid="9def5f4e-8aee-4557-b6d4-a0f094231dec"/>
+					<textFieldExpression><![CDATA[$F{sexe}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="725" y="0" width="25" height="15" uuid="e989d684-3d72-4373-98e0-42f28e25ab39"/>
+					<textFieldExpression><![CDATA[$F{prenom_agent}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="775" y="0" width="25" height="15" uuid="dc8390d1-570a-448b-858b-ffb00ba10b0b"/>
+					<textFieldExpression><![CDATA[$F{date_de_naissance_agent}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="11752877-164c-45a7-906e-af82b29bd004"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="f70b3d64-c036-467e-b703-8d6085dcf4fe"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="67be1a8c-c6ce-47b0-8e34-5e6ccc182324"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="60176438-093d-4c7c-8fbe-498ea1273df6"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="80c7dc2c-b5c2-4994-b631-a4f35779154c"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

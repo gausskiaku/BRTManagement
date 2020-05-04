@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EtatAgent" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="db5e3251-a93d-4dcf-bb87-de8ace291ed8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[Select * from t_agent]]>
+	</queryString>
+	<field name="id_agent" class="java.lang.Integer"/>
+	<field name="matricule_agent" class="java.lang.String"/>
+	<field name="nom_agent" class="java.lang.String"/>
+	<field name="post_nom_agent" class="java.lang.String"/>
+	<field name="lieu_de_naissance_agent" class="java.lang.String"/>
+	<field name="nom_pere" class="java.lang.String"/>
+	<field name="nom_mere" class="java.lang.String"/>
+	<field name="etat_civil_agent" class="java.lang.String"/>
+	<field name="nom_conj" class="java.lang.String"/>
+	<field name="nombre_enfant" class="java.lang.Integer"/>
+	<field name="nationalite_agent" class="java.lang.String"/>
+	<field name="province_agent" class="java.lang.String"/>
+	<field name="district_agent" class="java.lang.String"/>
+	<field name="territoire_agent" class="java.lang.String"/>
+	<field name="secteur_agent" class="java.lang.String"/>
+	<field name="num_tel_agent" class="java.lang.String"/>
+	<field name="email_agent" class="java.lang.String"/>
+	<field name="commune_agent" class="java.lang.String"/>
+	<field name="quartier_agent" class="java.lang.String"/>
+	<field name="avenue_agent" class="java.lang.String"/>
+	<field name="sexe" class="java.lang.String"/>
+	<field name="num" class="java.lang.String"/>
+	<field name="tel_urgent" class="java.lang.String"/>
+	<field name="degre_parental" class="java.lang.String"/>
+	<field name="commune_urgent" class="java.lang.String"/>
+	<field name="quartier_urgent" class="java.lang.String"/>
+	<field name="avenue_urgent" class="java.lang.String"/>
+	<field name="num_urgent" class="java.lang.String"/>
+	<field name="id_parrain" class="java.lang.Integer"/>
+	<field name="prenom_agent" class="java.lang.String"/>
+	<field name="photo_agent" class="java.lang.Object"/>
+	<field name="date_de_naissance_agent" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="5fe71e29-e1e8-442c-81f2-8ca0c06fb798"/>
+				<imageExpression><![CDATA["leaf_banner_gray.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="95abf469-9660-40a3-beb1-8ea2994379d1"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Leaf Gray Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="117" y="46" width="157" height="22" uuid="45c24ab1-b0fc-45ad-905d-4bd22d630bec"/>
+				<text><![CDATA[Leaf Gray SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="c4885e4f-877f-4d19-86fd-59d2a99f1044"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="17" height="15" uuid="c19efc07-1cfd-4476-97e4-eb5edc1610aa"/>
+				<text><![CDATA[id_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="17" y="19" width="17" height="15" uuid="eec08f16-e71c-4934-ac9e-a9e6916988a3"/>
+				<text><![CDATA[matricule_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="34" y="19" width="17" height="15" uuid="6ecd6eb1-089a-49ef-9cd5-e51bb4e95864"/>
+				<text><![CDATA[nom_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="51" y="19" width="17" height="15" uuid="fb2b4b0c-d146-4daf-9340-91f9b4340f1d"/>
+				<text><![CDATA[post_nom_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="68" y="19" width="17" height="15" uuid="c5e4b566-d7c5-43dd-8ebc-00c60d52a640"/>
+				<text><![CDATA[lieu_de_naissance_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="85" y="19" width="17" height="15" uuid="6fc08ec3-272b-4bf2-8c37-25adcd69a6f0"/>
+				<text><![CDATA[nom_pere]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="102" y="19" width="17" height="15" uuid="2fcb5380-c042-49da-a21c-5f22f310cfdf"/>
+				<text><![CDATA[nom_mere]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="119" y="19" width="17" height="15" uuid="3867a77a-e438-4415-b266-20704b5637bb"/>
+				<text><![CDATA[etat_civil_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="136" y="19" width="17" height="15" uuid="6ecda0c6-a3f6-4f54-af76-e51c8c5266ff"/>
+				<text><![CDATA[nom_conj]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="153" y="19" width="17" height="15" uuid="e1ce1c2e-545e-4436-8525-23f16d0ed692"/>
+				<text><![CDATA[nombre_enfant]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="170" y="19" width="17" height="15" uuid="99eb68a2-c7c6-4dcc-a4aa-ec499705eac2"/>
+				<text><![CDATA[nationalite_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="187" y="19" width="17" height="15" uuid="0a635405-df6d-4bf4-92b8-3eee2e08363c"/>
+				<text><![CDATA[province_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="204" y="19" width="17" height="15" uuid="e9c52a82-717d-4d2c-b93c-0059d1bcf807"/>
+				<text><![CDATA[district_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="221" y="19" width="17" height="15" uuid="6e322df5-d0d3-46c2-898b-4d8dea40878d"/>
+				<text><![CDATA[territoire_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="238" y="19" width="17" height="15" uuid="e1cbe3bc-36de-4b1d-a424-8c70b73bed32"/>
+				<text><![CDATA[secteur_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="255" y="19" width="17" height="15" uuid="48c199f8-7231-45a2-8d40-dd3547409e48"/>
+				<text><![CDATA[num_tel_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="272" y="19" width="17" height="15" uuid="489b58ea-efef-472d-aa02-d73de09fee29"/>
+				<text><![CDATA[email_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="289" y="19" width="17" height="15" uuid="2f8f28d1-4249-43c0-926c-ad006398706a"/>
+				<text><![CDATA[commune_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="306" y="19" width="17" height="15" uuid="3a601513-1ec0-46ff-9ecd-08d914100a59"/>
+				<text><![CDATA[quartier_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="323" y="19" width="17" height="15" uuid="5ba416b0-dcc2-4bc2-8c25-760f38567786"/>
+				<text><![CDATA[avenue_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="340" y="19" width="17" height="15" uuid="edadf472-97f0-4444-8b83-605f76827d99"/>
+				<text><![CDATA[sexe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="357" y="19" width="17" height="15" uuid="25a130c0-53d9-4e3c-b7a6-666a1caa79d9"/>
+				<text><![CDATA[num]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="374" y="19" width="17" height="15" uuid="056743bf-0f24-4c96-900c-935802b68fd9"/>
+				<text><![CDATA[tel_urgent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="391" y="19" width="17" height="15" uuid="463159b3-53a7-4cb6-b62a-7e1d2a78b133"/>
+				<text><![CDATA[degre_parental]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="408" y="19" width="17" height="15" uuid="6d2143e7-8535-44e1-833b-a8e75162b800"/>
+				<text><![CDATA[commune_urgent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="425" y="19" width="17" height="15" uuid="bc409b9c-070f-44bd-84f7-067c835a76b5"/>
+				<text><![CDATA[quartier_urgent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="442" y="19" width="17" height="15" uuid="597c845f-dddb-475b-8765-b5a4a73e687a"/>
+				<text><![CDATA[avenue_urgent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="459" y="19" width="17" height="15" uuid="085e4f30-f71b-4682-819b-a47078d518da"/>
+				<text><![CDATA[num_urgent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="476" y="19" width="17" height="15" uuid="f107a554-b852-4525-b43a-5624080059f4"/>
+				<text><![CDATA[id_parrain]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="493" y="19" width="17" height="15" uuid="af017295-a9fc-4771-8c8f-865fff3a661e"/>
+				<text><![CDATA[prenom_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="510" y="19" width="17" height="15" uuid="1e2f768c-a486-4aeb-978b-294f8d31cb21"/>
+				<text><![CDATA[photo_agent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="527" y="19" width="17" height="15" uuid="932b6b99-a948-4562-9f39-0ae9e3473ba1"/>
+				<text><![CDATA[date_de_naissance_agent]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="4171c689-5e4a-4422-b31e-7fa0b06d5c48"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="17" height="15" uuid="49524d93-c8be-4e04-8034-fc25ede432be"/>
+				<textFieldExpression><![CDATA[$F{id_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="17" y="0" width="17" height="15" uuid="59bc2353-0876-4fc4-9c94-80ba2227d237"/>
+				<textFieldExpression><![CDATA[$F{matricule_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="34" y="0" width="17" height="15" uuid="e89794ab-7e49-46e6-85a4-0264b635fd17"/>
+				<textFieldExpression><![CDATA[$F{nom_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="51" y="0" width="17" height="15" uuid="153f9d85-2cd5-4d3b-b26e-d59dd54d4a74"/>
+				<textFieldExpression><![CDATA[$F{post_nom_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="68" y="0" width="17" height="15" uuid="f677d767-30a5-44b6-86ac-7de54f490e4c"/>
+				<textFieldExpression><![CDATA[$F{lieu_de_naissance_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="85" y="0" width="17" height="15" uuid="9aa619b4-a5a2-411e-a7e9-3c62a6b4d247"/>
+				<textFieldExpression><![CDATA[$F{nom_pere}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="102" y="0" width="17" height="15" uuid="d494622c-613d-4095-b1e7-16b5d8f5c695"/>
+				<textFieldExpression><![CDATA[$F{nom_mere}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="119" y="0" width="17" height="15" uuid="e21b6c30-8441-4ff8-aafb-d80449ef1fb4"/>
+				<textFieldExpression><![CDATA[$F{etat_civil_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="136" y="0" width="17" height="15" uuid="cd5fdeb8-b33d-4d59-9455-89aae57c1769"/>
+				<textFieldExpression><![CDATA[$F{nom_conj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="153" y="0" width="17" height="15" uuid="71f28e1d-ebe8-4c51-9cb5-1154d88b0965"/>
+				<textFieldExpression><![CDATA[$F{nombre_enfant}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="170" y="0" width="17" height="15" uuid="94ff0f97-4f59-44e6-abef-0914fe97efe1"/>
+				<textFieldExpression><![CDATA[$F{nationalite_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="187" y="0" width="17" height="15" uuid="cd8fd13e-db27-4cbb-a086-23f74a58a695"/>
+				<textFieldExpression><![CDATA[$F{province_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="204" y="0" width="17" height="15" uuid="8d76879f-c773-41af-9b44-4757ee438b10"/>
+				<textFieldExpression><![CDATA[$F{district_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="221" y="0" width="17" height="15" uuid="238abaf5-8816-4790-83fe-8303af8b49cb"/>
+				<textFieldExpression><![CDATA[$F{territoire_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="238" y="0" width="17" height="15" uuid="4133efbb-f61f-4b41-b37f-b5791f9f396a"/>
+				<textFieldExpression><![CDATA[$F{secteur_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="255" y="0" width="17" height="15" uuid="cf626ba4-2820-455c-9552-fe5567730115"/>
+				<textFieldExpression><![CDATA[$F{num_tel_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="272" y="0" width="17" height="15" uuid="173e28f4-2b6e-48aa-be07-e3046d466110"/>
+				<textFieldExpression><![CDATA[$F{email_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="289" y="0" width="17" height="15" uuid="9eae9ddb-afa5-474a-a290-fc80041cbf5d"/>
+				<textFieldExpression><![CDATA[$F{commune_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="306" y="0" width="17" height="15" uuid="97d7cd15-d291-446c-9ccd-e96e55572bb8"/>
+				<textFieldExpression><![CDATA[$F{quartier_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="323" y="0" width="17" height="15" uuid="8452e2e8-e352-4b54-8e2d-cdadf8281efd"/>
+				<textFieldExpression><![CDATA[$F{avenue_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="340" y="0" width="17" height="15" uuid="7211b261-6406-40f8-bea0-66631ee24348"/>
+				<textFieldExpression><![CDATA[$F{sexe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="357" y="0" width="17" height="15" uuid="1cfd63d3-4d44-47f2-815e-f85962884812"/>
+				<textFieldExpression><![CDATA[$F{num}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="374" y="0" width="17" height="15" uuid="56afe996-efd9-41b5-8c91-3e16732a3d96"/>
+				<textFieldExpression><![CDATA[$F{tel_urgent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="391" y="0" width="17" height="15" uuid="60478c98-3be9-4d1d-957a-26f1234905a5"/>
+				<textFieldExpression><![CDATA[$F{degre_parental}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="408" y="0" width="17" height="15" uuid="db38b273-b406-45b8-956d-3b9dc98d006b"/>
+				<textFieldExpression><![CDATA[$F{commune_urgent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="425" y="0" width="17" height="15" uuid="006c26c9-3a55-4027-89c5-7670d0c1bcc4"/>
+				<textFieldExpression><![CDATA[$F{quartier_urgent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="442" y="0" width="17" height="15" uuid="7aa0ef84-2282-4877-9366-2a857ce0f812"/>
+				<textFieldExpression><![CDATA[$F{avenue_urgent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="459" y="0" width="17" height="15" uuid="fab31afe-10c5-4658-a7fc-2cbfb9264218"/>
+				<textFieldExpression><![CDATA[$F{num_urgent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="476" y="0" width="17" height="15" uuid="f4c52eb1-de6a-4672-a35f-e165713cfffb"/>
+				<textFieldExpression><![CDATA[$F{id_parrain}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="493" y="0" width="17" height="15" uuid="31c7c840-54b4-44b7-9dbc-d067b13855fa"/>
+				<textFieldExpression><![CDATA[$F{prenom_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="510" y="0" width="17" height="15" uuid="47fe3370-2efc-40bf-a0b1-5e1cf9a6b299"/>
+				<textFieldExpression><![CDATA[""+$F{photo_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="527" y="0" width="17" height="15" uuid="54a8ca78-b960-4204-ae7b-9698a20a137f"/>
+				<textFieldExpression><![CDATA[$F{date_de_naissance_agent}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="64b22b35-37dd-4670-9c2a-b317ba3a2ed5"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="52925a79-fec4-4747-954d-f755d460425c"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="9530a027-3005-4a14-973d-3ff399ba1a4d"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="0e9db9d7-5c52-4a4e-96d9-3467c42f0e7c"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

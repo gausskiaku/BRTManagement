@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Mat" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="15f8efac-99d3-4089-9d46-9d447fc7405b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     t_materiel."id_mat" AS t_materiel_id_mat,
+     t_materiel."type_mat" AS t_materiel_type_mat,
+     t_materiel."caracteristique" AS t_materiel_caracteristique,
+     t_materiel."id_emp" AS t_materiel_id_emp,
+     t_materiel."disponibilite" AS t_materiel_disponibilite,
+     t_evenement_mat."id_ev" AS t_evenement_mat_id_ev,
+     t_evenement_mat."type_ev" AS t_evenement_mat_type_ev,
+     t_evenement_mat."jour" AS t_evenement_mat_jour,
+     t_evenement_mat."etat_mat" AS t_evenement_mat_etat_mat,
+     t_evenement_mat."quantite" AS t_evenement_mat_quantite,
+     t_evenement_mat."id_mat" AS t_evenement_mat_id_mat,
+     t_evenement_mat."id_agent" AS t_evenement_mat_id_agent,
+     t_evenement_mat."date_ev" AS t_evenement_mat_date_ev,
+     t_evenement_mat."heure" AS t_evenement_mat_heure,
+     t_agent."id_agent" AS t_agent_id_agent,
+     t_agent."matricule_agent" AS t_agent_matricule_agent,
+     t_agent."nom_agent" AS t_agent_nom_agent,
+     t_agent."post_nom_agent" AS t_agent_post_nom_agent,
+     t_agent."lieu_de_naissance_agent" AS t_agent_lieu_de_naissance_agent,
+     t_agent."nom_pere" AS t_agent_nom_pere,
+     t_agent."nom_mere" AS t_agent_nom_mere,
+     t_agent."etat_civil_agent" AS t_agent_etat_civil_agent,
+     t_agent."nom_conj" AS t_agent_nom_conj,
+     t_agent."nombre_enfant" AS t_agent_nombre_enfant,
+     t_agent."nationalite_agent" AS t_agent_nationalite_agent,
+     t_agent."province_agent" AS t_agent_province_agent,
+     t_agent."district_agent" AS t_agent_district_agent,
+     t_agent."territoire_agent" AS t_agent_territoire_agent,
+     t_agent."secteur_agent" AS t_agent_secteur_agent,
+     t_agent."num_tel_agent" AS t_agent_num_tel_agent,
+     t_agent."email_agent" AS t_agent_email_agent,
+     t_agent."commune_agent" AS t_agent_commune_agent,
+     t_agent."quartier_agent" AS t_agent_quartier_agent,
+     t_agent."avenue_agent" AS t_agent_avenue_agent,
+     t_agent."sexe" AS t_agent_sexe,
+     t_agent."num" AS t_agent_num,
+     t_agent."tel_urgent" AS t_agent_tel_urgent,
+     t_agent."degre_parental" AS t_agent_degre_parental,
+     t_agent."commune_urgent" AS t_agent_commune_urgent,
+     t_agent."quartier_urgent" AS t_agent_quartier_urgent,
+     t_agent."avenue_urgent" AS t_agent_avenue_urgent,
+     t_agent."num_urgent" AS t_agent_num_urgent,
+     t_agent."id_parrain" AS t_agent_id_parrain,
+     t_agent."prenom_agent" AS t_agent_prenom_agent,
+     t_agent."photo_agent" AS t_agent_photo_agent,
+     t_agent."date_de_naissance_agent" AS t_agent_date_de_naissance_agent
+FROM
+     "public"."t_materiel" t_materiel INNER JOIN "public"."t_evenement_mat" t_evenement_mat ON t_materiel."id_mat" = t_evenement_mat."id_mat"
+     INNER JOIN "public"."t_agent" t_agent ON t_evenement_mat."id_agent" = t_agent."id_agent"
+WHERE t_evenement_mat.id_ev = 32]]>
+	</queryString>
+	<field name="t_materiel_type_mat" class="java.lang.String"/>
+	<field name="t_materiel_caracteristique" class="java.lang.String"/>
+	<field name="t_evenement_mat_jour" class="java.lang.String"/>
+	<field name="t_evenement_mat_type_ev" class="java.lang.String"/>
+	<field name="t_evenement_mat_quantite" class="java.lang.Integer"/>
+	<field name="t_evenement_mat_date_ev" class="java.lang.String"/>
+	<field name="t_evenement_mat_heure" class="java.lang.String"/>
+	<field name="t_agent_matricule_agent" class="java.lang.String"/>
+	<field name="t_agent_nom_agent" class="java.lang.String"/>
+	<field name="t_agent_post_nom_agent" class="java.lang.String"/>
+	<field name="t_agent_prenom_agent" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="95" backcolor="#000000" uuid="bb8a3565-d11c-4ffe-b652-86670a72752c"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="e2a7b4e8-4287-4c73-ab3a-b6e81d03d2be"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Brt Africa]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="5e7f1677-e6d4-4dd3-a49c-517fe165f834"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Direction Technique]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="553" height="32" forecolor="#000000" backcolor="#CC0000" uuid="7284f9ea-ca70-466f-a8e2-64c9f1651c94"/>
+				<staticText>
+					<reportElement x="0" y="0" width="185" height="32" uuid="0345af94-5714-4531-9ca6-670c11bf1b4d"/>
+					<textElement>
+						<font fontName="Segoe UI Light" size="16"/>
+					</textElement>
+					<text><![CDATA[Bon d'Entrée du materiel]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="356" y="12" width="50" height="20" uuid="4d1735ac-2c0b-490d-9ba8-39c515e4e425"/>
+					<textElement>
+						<font fontName="Segoe UI" size="15"/>
+					</textElement>
+					<text><![CDATA[07 : 32]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="406" y="12" width="147" height="20" uuid="c368a91d-f0ea-47f3-bca0-d326862fbb4a"/>
+					<textElement>
+						<font fontName="Segoe UI" size="15"/>
+					</textElement>
+					<text><![CDATA[Mardi le 24 Nov 2015]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="1" width="185" height="32" uuid="50ed8816-212c-4561-be39-a52f7d792805"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="17"/>
+				</textElement>
+				<text><![CDATA[Informations du Materiel]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="126" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="7" width="122" height="18" forecolor="#000000" uuid="73c6d54d-1342-4bed-a8ad-0138fe774ea4"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Type du Materiel :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="24" width="122" height="18" forecolor="#000000" uuid="644bf343-ba69-4073-93a7-7437351e0865"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Caracteristique :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="41" width="122" height="18" forecolor="#000000" uuid="7c595d1a-4709-44b5-9e00-c0b93e8e54d8"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Quantité :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="63" width="122" height="18" forecolor="#000000" uuid="5f85f6d0-d56f-4aa3-bcac-764e511b116b"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Matricule Agent :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="62" width="77" height="20" uuid="759547f2-eec6-4f9c-bb06-c0547e95c948"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[BrtAfrica001]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="24" width="329" height="20" uuid="9129f5b2-5757-4de3-a7a1-de27df19c9b7"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[Camera HDD (High Disc Drive) volume de 53 x 68 x 113 mm]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="43" width="100" height="20" uuid="67a42ab6-0978-4407-976e-6e2d87117020"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="5" width="100" height="20" uuid="a6c6cfb3-b5b6-45f9-b378-b8f031dbce12"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[Camera]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="62" width="58" height="20" uuid="2286a421-c4d5-45ee-a86e-783b6eac3d89"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[KOMBHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="209" y="62" width="55" height="20" uuid="d1a441e7-32c5-47d4-9381-633ca3b8e0db"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[KIAKU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="63" width="63" height="20" uuid="a48a7907-6d98-4d7f-9ef2-57a90251ec71"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<text><![CDATA[Gauss]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="93" width="276" height="20" forecolor="#FF0000" uuid="4cd52e58-7bc9-4d4c-866f-87cbec5af96d"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="15"/>
+				</textElement>
+				<text><![CDATA[Merci pour votre meilleure collaboration]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="40" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="534c9478-f8b4-426f-bad6-33737c813885"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="12" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
